@@ -9,8 +9,6 @@ spec:
   ports:
     - port: 5432
   selector:
-    app: drupal
-    tier: postgreSQL
     matchLabels:
       name: postgreSQL
 ---
