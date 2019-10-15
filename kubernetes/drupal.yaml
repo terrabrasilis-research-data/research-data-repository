@@ -13,6 +13,8 @@ spec:
   selector:
     app: drupal
     tier: frontend
+    matchLabels:
+      name: frontend
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

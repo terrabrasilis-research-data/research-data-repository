@@ -11,6 +11,8 @@ spec:
   selector:
     app: drupal
     tier: postgreSQL
+    matchLabels:
+      name: postgreSQL
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
