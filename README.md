@@ -9,10 +9,7 @@ A Research Data Repository provides researchers with the tools they need to stor
 ### 1. Create Kubernetes cluster
 
 ```shell
-ansible-playbook -i hosts kube-cluster/initial.yml
-ansible-playbook -i hosts kube-cluster/kube-dependencies.yml
-ansible-playbook -i hosts kube-cluster/master.yml
-
+minikube start -p TBRD
 ```
 
 ### 2. Create the service and deployment
