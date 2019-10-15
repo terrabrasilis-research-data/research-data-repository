@@ -1,35 +1,76 @@
 # TerraBrasilis Research Data - Research Data Repository
 A Research Data Repository provides researchers with the tools they need to store and disseminate their research data. This is done through two different forms of storage and for the dissemination an Research Data Repository counts with several services of access, catalog and processing. 
 
-## Included components
+## Prerequisites
 
-* [Kubernetes Cluster](): Create and manage your own cloud infrastructure and use Kubernetes as your container orchestration engine.
-* [PostgreSQL](): Sophisticated open-source Object-Relational DBMS supporting almost all SQL constructs.
+- Kubernetes cluster with kubectl installed and configured
+- docker cli installed
 
-### 1. Create Kubernetes cluster
+## Installation
 
-```shell
-minikube start -p TBRD
-```
+Deploy postgres
+   ```
+   kubectl create -f specs/postgres.yml
+   ```
 
-### 2. Create the service and deployment
+Create a configmap
+   ```
+   kubectl create configmap hostname-config --from-literal=postgres_host=$(kubectl get svc postgres -o jsonpath="{.spec.clusterIP}")
+   ```
 
-run ['scripts/start.sh'](scripts/start.sh).
+Build the Spring app
+
+   ```
+   ./mvnw -DskipTests package
+   ```
+
+Build/Push a Docker image
+   ```
+   docker build -t GSansigolo/spring-boot-postgres-on-k8s:v1 .
+   docker push GSansigolo/spring-boot-postgres-on-k8s:v1
+   ```
+
+Deploy the app
+   ```
+   kubectl create -f specs/spring-boot-app.yml
+   ```
+
+Create an load balancer
+   ```
+   kubectl expose deployment spring-boot-postgres-sample --type=LoadBalancer --port=8080
+   ```
+
+Get the External IP address of Service
+   ```
+   kubectl get svc spring-boot-postgres-sample
+
+   ```
+The the app is accessible at `http://<External IP Address>:8080`
 
 
-### 3. Access Drupal
+Scale your application
+   ```
+   kubectl scale deployment spring-boot-postgres-sample --replicas=3
+   ```
 
-Check the status:
+## Deleting the Resources
 
-```shell
-kubectl get pods -l app=drupal
-```
+1. Delete the Spring Boot app deployment
+   ```
+   kubectl delete -f specs/spring-boot-app.yml
+   ```
 
-Know the IP adress of Drupal.
+2. Delete the service for the app
+   ```
+   kubectl delete svc spring-boot-postgres-sample
+   ```
 
-```shell
-$ minikube service drupal --url
-```
+3. Delete the hostname config map
+   ```
+   kubectl delete cm hostname-config
+   ```
 
-Access the newly deployed Drupal site via http://<IP_ADDRESS>:30080
-
+4. Delete Postgres
+   ```
+   kubectl delete -f specs/postgres.yml
+   ```
