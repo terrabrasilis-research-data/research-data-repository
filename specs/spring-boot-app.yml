@@ -32,4 +32,4 @@ spec:
               configMapKeyRef:
                 name: hostname-config
                 key: postgres_host
-        image: GSansigolo/spring-boot-postgres-on-k8s:v1
+        image: gsansigolo/spring-boot-postgres-on-k8s:v1

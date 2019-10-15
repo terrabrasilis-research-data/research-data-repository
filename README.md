@@ -26,8 +26,8 @@ Build the Spring app
 
 Build/Push a Docker image
    ```
-   docker build -t GSansigolo/spring-boot-postgres-on-k8s:v1 .
-   docker push GSansigolo/spring-boot-postgres-on-k8s:v1
+   docker build -t gsansigolo/spring-boot-postgres-on-k8s:v1 .
+   docker push gsansigolo/spring-boot-postgres-on-k8s:v1
    ```
 
 Deploy the app
