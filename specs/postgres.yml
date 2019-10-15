@@ -17,6 +17,9 @@ spec:
   resources:
     requests:
       storage: 32Gi
+  selector:
+    matchLabels:
+      app: postgres
 ---
 apiVersion: apps/v1
 kind: Deployment

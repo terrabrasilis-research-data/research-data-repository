@@ -10,7 +10,7 @@ A Research Data Repository provides researchers with the tools they need to stor
 
 Deploy postgres
    ```
-   kubectl create -f specs/postgres.yml
+   kubectl create -f specs/postgres.yml --validate=false
    ```
 
 Create a configmap
