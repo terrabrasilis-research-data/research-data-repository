@@ -1,5 +1,8 @@
-kubectl create -f kubernetes/local-volumes.yaml
-kubectl create -f kubernetes/postgres.yaml
-kubectl create -f kubernetes/drupal.yaml
+#postgres
+kubectl create -f postgres-configmap.yaml 
+kubectl create -f postgres-storage.yaml 
+kubectl create -f postgres-deployment.yaml 
+kubectl create -f postgres-service.yaml
+
 kubectl get nodes
-kubectl get svc drupal
+kubectl get svc postgres
