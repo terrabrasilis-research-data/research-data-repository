@@ -6,3 +6,5 @@ kubectl create -f kubernetes/postgres-service.yaml
 
 kubectl get nodes
 kubectl get svc postgres
+
+kubectl expose deployment postgres --type=LoadBalancer --port=32130 --target-port=5432

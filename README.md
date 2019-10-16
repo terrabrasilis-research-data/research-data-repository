@@ -27,10 +27,10 @@ Get the Node port
 kubectl get svc postgres
 ```
 
-Use port 30854 to connect to PostgreSQL from machine/node present
+Use port 32130 to connect to PostgreSQL from machine/node present
 
 ```shell
-psql -h localhost -U postgresadmin1 --password -p 30854 postgresdb
+psql -h localhost -U postgresadmin1 --password -p 32130 postgresdb
 ```
 
 ### For deletion of PostgreSQL resources
