@@ -8,6 +8,9 @@ spec:
     metadata:
       labels:
         app: postgres
+  selector:
+    matchLabels:
+      app: postgres
     spec:
       containers:
         - name: postgres
