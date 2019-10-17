@@ -13,11 +13,11 @@ A Research Data Repository provides researchers with the tools they need to stor
 run the script ['scripts/start.sh'](scripts/start.sh)
 
 ```shell
+kubectl create -f kubernetes/nginx.yaml
 kubectl create -f kubernetes/postgres-configmap.yaml
 kubectl create -f kubernetes/postgres-storage.yaml
 kubectl create -f kubernetes/postgres-deployment.yaml
 kubectl create -f kubernetes/postgres-service.yaml
-kubectl apply -f kubernetes/nginx.yaml
 ```
 
 ### 3. Connect to PostgreSQL
@@ -37,14 +37,12 @@ kubectl exec -it nginx -- /bin/bash
 Use port 5432 to connect to PostgreSQL from machine/node present
 
 ```shell
-psql -h localhost -U postgresadmin1 --password -p 32130 postgresdb
+psql -h localhost -U postgresadmin --password -p 5432 postgresdb
 ```
 
 ### For deletion of PostgreSQL resources
 
 ```shell
-kubectl delete pods nginx
-
 kubectl delete service postgres 
 kubectl delete deployment postgres
 kubectl delete configmap postgres-config
