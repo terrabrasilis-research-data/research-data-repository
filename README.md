@@ -43,6 +43,8 @@ psql -h localhost -U postgresadmin1 --password -p 32130 postgresdb
 ### For deletion of PostgreSQL resources
 
 ```shell
+kubectl delete pods nginx
+
 kubectl delete service postgres 
 kubectl delete deployment postgres
 kubectl delete configmap postgres-config
