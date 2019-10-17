@@ -17,6 +17,7 @@ kubectl create -f kubernetes/postgres-configmap.yaml
 kubectl create -f kubernetes/postgres-storage.yaml
 kubectl create -f kubernetes/postgres-deployment.yaml
 kubectl create -f kubernetes/postgres-service.yaml
+kubectl apply -f kubernetes/nginx.yaml
 ```
 
 ### 3. Connect to PostgreSQL
@@ -27,7 +28,13 @@ Get the Node port
 kubectl get svc postgres
 ```
 
-Use port 32130 to connect to PostgreSQL from machine/node present
+Get a shell to the running Container:
+
+```shell
+kubectl exec -it nginx -- /bin/bash
+```
+
+Use port 5432 to connect to PostgreSQL from machine/node present
 
 ```shell
 psql -h localhost -U postgresadmin1 --password -p 32130 postgresdb
