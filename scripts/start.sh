@@ -1,4 +1,4 @@
-export RDR_NAME = "Lab TEST"
+export RDR_NAME = "LabTEST"
 
 #postgres
 kubectl create -f kubernetes/postgres-configmap.yaml 
