@@ -51,6 +51,7 @@ psql -h localhost -U postgresadmin --password -p 5432 postgresdb
 
 ```shell
 kubectl delete service postgres 
+kubectl delete service ssh 
 kubectl delete deployment postgres
 kubectl delete configmap postgres-config
 kubectl delete persistentvolumeclaim postgres-pv-claim

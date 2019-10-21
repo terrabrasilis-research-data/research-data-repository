@@ -6,6 +6,8 @@ metadata:
 spec:
   type: LoadBalancer
   loadBalancerIP: 104.199.75.69
+  externalIPs:
+    - 150.163.2.194
   selector:
     app: ssh
   ports:
