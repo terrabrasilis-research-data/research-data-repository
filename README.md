@@ -8,7 +8,12 @@ A Research Data Repository provides researchers with the tools they need to stor
 
 ### 1. Create Kubernetes cluster
 
+
 ### 2. Create the service and deployment
+
+run the script ['scripts/generateHostKeys.sh'](scripts/generateHostKeys.sh)
+
+run the script ['scripts/updateKeys.sh'](scripts/updateKeys.sh)
 
 run the script ['scripts/start.sh'](scripts/start.sh)
 
@@ -18,6 +23,8 @@ kubectl create -f kubernetes/postgres-configmap.yaml
 kubectl create -f kubernetes/postgres-storage.yaml
 kubectl create -f kubernetes/postgres-deployment.yaml
 kubectl create -f kubernetes/postgres-service.yaml
+kubectl create -f kubernetes/ssh.yaml
+kubectl create -f kubernetes/ssh-service.yaml
 ```
 
 ### 3. Connect to PostgreSQL
