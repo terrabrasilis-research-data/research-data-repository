@@ -1,5 +1,3 @@
-source env
-
 #postgres
 kubectl create -f kubernetes/postgres-configmap.yaml 
 kubectl create -f kubernetes/postgres-storage.yaml 

@@ -8,7 +8,7 @@ spec:
   - name: shared-data
     emptyDir: {}
   containers:
-  - name: RDR_NAME_nginx
+  - name: nginx
     image: nginx
     volumeMounts:
     - name: shared-data
