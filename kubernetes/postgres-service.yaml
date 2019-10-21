@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgres
+  name: '${RDR_NAME}'_postgres
   labels:
-    app: postgres
+    app: '${RDR_NAME}'
 spec:
   type: NodePort
   ports:
    - port: 5432
   selector:
-   app: postgres
+   app: '${RDR_NAME}'

@@ -44,7 +44,7 @@ kubectl exec -it nginx -- /bin/bash
 Use port 5432 to connect to PostgreSQL from machine/node present
 
 ```shell
-psql -h localhost -U postgresadmin --password -p 5432 postgresdb
+psql -h 150.163.2.194 -U postgresadmin --password -p 5432 postgresdb
 ```
 
 ### For deletion of PostgreSQL resources
@@ -53,6 +53,7 @@ psql -h localhost -U postgresadmin --password -p 5432 postgresdb
 kubectl delete service postgres 
 kubectl delete service ssh 
 kubectl delete deployment postgres
+kubectl delete deployment ssh
 kubectl delete configmap postgres-config
 kubectl delete persistentvolumeclaim postgres-pv-claim
 kubectl delete persistentvolume postgres-pv-volume

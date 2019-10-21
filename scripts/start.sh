@@ -1,5 +1,4 @@
-#nginx
-kubectl create -f kubernetes/nginx.yaml
+export RDR_NAME = "Lab TEST"
 
 #postgres
 kubectl create -f kubernetes/postgres-configmap.yaml 

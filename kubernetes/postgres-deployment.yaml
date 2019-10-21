@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgres
+  name: '${RDR_NAME}'_postgres
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: '${RDR_NAME}'
   template:
     metadata:
       labels:
-        app: postgres
+        app: '${RDR_NAME}'_postgres
     spec:
       containers:
         - name: postgres

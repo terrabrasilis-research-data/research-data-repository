@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ssh
+  name: '${RDR_NAME}'_ssh
   namespace: default
 spec:
   type: LoadBalancer
@@ -9,7 +9,7 @@ spec:
   externalIPs:
     - 150.163.2.194
   selector:
-    app: ssh
+    app: '${RDR_NAME}'_ssh
   ports:
     # the port that this service should serve on
   - port: 22
