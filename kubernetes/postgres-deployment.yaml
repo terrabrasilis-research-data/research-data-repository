@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ${RDR_NAME}_postgres
+  name: RDR_NAME_postgres
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ${RDR_NAME}
+      app: RDR_NAME
   template:
     metadata:
       labels:
-        app: ${RDR_NAME}_postgres
+        app: RDR_NAME_postgres
     spec:
       containers:
-        - name: ${RDR_NAME}_postgres
+        - name: RDR_NAME_postgres
           image: postgres:10.4
           imagePullPolicy: "IfNotPresent"
           ports:
@@ -28,3 +28,5 @@ spec:
         - name: postgredb
           persistentVolumeClaim:
             claimName: postgres-pv-claim
+
+  args: ["$(RDR_NAME)"]
