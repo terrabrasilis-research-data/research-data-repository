@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: postgres-config
   labels:
-    app: RDR_NAME
+    app: Lab_Teste
 data:
   POSTGRES_DB: postgresdb
   POSTGRES_USER: postgresadmin

@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgres
+  name: Lab_Teste_postgres
   labels:
-    app: postgres
+    app: Lab_Teste
 spec:
   type: NodePort
   ports:
    - port: 5432
   selector:
-   app: postgres
+   app: Lab_Teste
