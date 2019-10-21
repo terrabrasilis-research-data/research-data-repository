@@ -28,5 +28,3 @@ spec:
         - name: postgredb
           persistentVolumeClaim:
             claimName: postgres-pv-claim
-
-  args: ["$(RDR_NAME)"]

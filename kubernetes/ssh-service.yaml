@@ -15,4 +15,3 @@ spec:
   - port: 22
     protocol: TCP
     targetPort: 22
-  args: ["$(RDR_NAME)"]

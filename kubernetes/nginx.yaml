@@ -15,4 +15,3 @@ spec:
       mountPath: /usr/share/nginx/html
   hostNetwork: true
   dnsPolicy: Default
-  args: ["$(RDR_NAME)"]

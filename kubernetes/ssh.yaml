@@ -51,4 +51,3 @@ spec:
         secret:
           secretName: ssh-host-keys
           defaultMode: 0600
-  args: ["$(RDR_NAME)"]

@@ -8,4 +8,3 @@ data:
   POSTGRES_DB: postgresdb
   POSTGRES_USER: postgresadmin
   POSTGRES_PASSWORD: admin123
-args: ["$(RDR_NAME)"]
