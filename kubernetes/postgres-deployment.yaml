@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: '${RDR_NAME}'_postgres
+  name: ${RDR_NAME}_postgres
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: '${RDR_NAME}'
+      app: ${RDR_NAME}
   template:
     metadata:
       labels:
-        app: '${RDR_NAME}'_postgres
+        app: ${RDR_NAME}_postgres
     spec:
       containers:
-        - name: postgres
+        - name: ${RDR_NAME}_postgres
           image: postgres:10.4
           imagePullPolicy: "IfNotPresent"
           ports:
