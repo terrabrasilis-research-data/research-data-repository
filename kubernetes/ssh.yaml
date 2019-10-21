@@ -5,10 +5,13 @@ metadata:
   namespace: default
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: postgres  
   template:
     metadata:
       labels:
-        app: ssh
+        app: postgres  
     spec:
       containers:
       - name: master
