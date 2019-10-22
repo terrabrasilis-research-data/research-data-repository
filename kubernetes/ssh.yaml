@@ -7,7 +7,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgres  
+      app: LabTEST  
   template:
     metadata:
       labels:
