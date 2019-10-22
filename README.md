@@ -9,7 +9,7 @@ A Research Data Repository provides researchers with the tools they need to stor
 ### 1. Create Kubernetes cluster
 
 
-### 2. Create the service and deployment
+### 2. Create the services and the deployments
 
 run the script ['scripts/generateHostKeys.sh'](scripts/generateHostKeys.sh)
 
@@ -27,24 +27,12 @@ kubectl create -f kubernetes/ssh.yaml
 kubectl create -f kubernetes/ssh-service.yaml
 ```
 
-### 3. Connect to PostgreSQL
+### 3. Connect to the pods
 
-Get the Node port
-
-```shell
-kubectl get svc postgres
-```
-
-Get a shell to the running Container:
+Get the services
 
 ```shell
-kubectl exec -it nginx -- /bin/bash
-```
-
-Use port 5432 to connect to PostgreSQL from machine/node present
-
-```shell
-psql -h 150.163.2.194 -U postgresadmin --password -p 5432 postgresdb
+kubectl get services
 ```
 
 ### For deletion of PostgreSQL resources
