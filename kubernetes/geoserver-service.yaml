@@ -6,14 +6,14 @@ metadata:
     kompose.version: 1.16.0 (0c01309)
   creationTimestamp: null
   labels:
-    io.kompose.service: postgres
-  name: postgres
+    io.kompose.service: geoserver
+  name: geoserver
 spec:
   ports:
-  - name: "5432"
-    port: 5432
-    targetPort: 5432
+  - name: "8081"
+    port: 8081
+    targetPort: 8080
   selector:
-    io.kompose.service: postgres
+    io.kompose.service: geoserver
 status:
   loadBalancer: {}

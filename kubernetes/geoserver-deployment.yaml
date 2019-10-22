@@ -6,8 +6,8 @@ metadata:
     kompose.version: 1.16.0 (0c01309)
   creationTimestamp: null
   labels:
-    io.kompose.service: postgres
-  name: postgres
+    io.kompose.service: geoserver
+  name: geoserver
 spec:
   replicas: 1
   strategy:
@@ -16,25 +16,25 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        io.kompose.service: postgres
+        io.kompose.service: geoserver
     spec:
       containers:
       - env:
-        - name: POSTGRES_PASSWORD
+        - name: GEOSERVER_DATA_DIR
           value: geonetwork
-        - name: POSTGRES_USER
+        - name: GEOWEBCACHE_CACHE_DIR
           value: geonetwork
-        image: mdillon/postgis
-        name: db4geonetwork
+        image: kartoza/geoserver:2.13.0
+        name: geoserver4geonetwork
         ports:
-        - containerPort: 5432
+        - containerPort: 8080
         resources: {}
         volumeMounts:
-        - mountPath: /var/lib/postgresql/data
-          name: postgres
+        - mountPath: /opt/geoserver/data_dir
+          name: geoserver-data
       restartPolicy: Always
       volumes:
-      - name: postgres
+      - name: geoserver-data
         persistentVolumeClaim:
-          claimName: postgres
+          claimName: geoserver-data
 status: {}

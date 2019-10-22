@@ -5,26 +5,31 @@ A Research Data Repository provides researchers with the tools they need to stor
 
 * [Kubernetes Cluster](): Create and manage your own cloud infrastructure and use Kubernetes as your container orchestration engine.
 * [PostgreSQL](): Sophisticated open-source Object-Relational DBMS supporting almost all SQL constructs.
+* [GeoServer](): GeoServer is an open source server for sharing geospatial data. Designed for interoperability, it publishes data from any major spatial data source using open.
+* [GeoNetwork](): GeoNetwork provides an easy to use web interface to search geospatial data across multiple catalogs. .
 
 ### 1. Create Kubernetes cluster
 
 
 ### 2. Create the services and the deployments
 
-run the script ['scripts/generateHostKeys.sh'](scripts/generateHostKeys.sh)
-
-run the script ['scripts/updateKeys.sh'](scripts/updateKeys.sh)
-
 run the script ['scripts/start.sh'](scripts/start.sh)
 
 ```shell
-kubectl create -f kubernetes/nginx.yaml
-kubectl create -f kubernetes/postgres-configmap.yaml
-kubectl create -f kubernetes/postgres-storage.yaml
-kubectl create -f kubernetes/postgres-deployment.yaml
-kubectl create -f kubernetes/postgres-service.yaml
-kubectl create -f kubernetes/ssh.yaml
-kubectl create -f kubernetes/ssh-service.yaml
+#geoserver
+kubectl apply -f kubernetes/geoserver-deployment.yaml
+kubectl apply -f kubernetes/geoserver-data-persistentvolumeclaim.yaml
+kubectl apply -f kubernetes/geoserver-service.yaml
+
+#geonetwork
+kubectl apply -f kubernetes/geonetwork-deployment.yaml
+kubectl apply -f kubernetes/geonetwork-persistentvolumeclaim.yaml
+kubectl apply -f kubernetes/geonetwork-service.yaml
+
+#postgis
+kubectl apply -f kubernetes/postgres-deployment.yaml
+kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
+kubectl apply -f kubernetes/postgres-service.yaml
 ```
 
 ### 3. Connect to the pods
