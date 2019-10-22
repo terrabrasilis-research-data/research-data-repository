@@ -40,8 +40,7 @@ kubectl get services
 ```shell
 kubectl delete service postgres 
 kubectl delete service ssh 
-kubectl delete deployment postgres
-kubectl delete deployment ssh
+kubectl delete deployment labtest
 kubectl delete configmap postgres-config
 kubectl delete persistentvolumeclaim postgres-pv-claim
 kubectl delete persistentvolume postgres-pv-volume

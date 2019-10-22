@@ -6,6 +6,8 @@ metadata:
     app: postgres
 spec:
   type: NodePort
+  externalIPs:
+    - 150.163.2.194
   ports:
    - port: 5432
   selector:
