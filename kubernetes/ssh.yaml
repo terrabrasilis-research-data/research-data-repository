@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: LabTEST
+  name: Labtest
   namespace: default
 spec:
   replicas: 1
