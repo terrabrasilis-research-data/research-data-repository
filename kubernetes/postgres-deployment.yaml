@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Lab_Teste_Postgres
+  name: postgres
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Lab_Teste
+      app: postgres
   template:
     metadata:
       labels:
-        app: Lab_Teste
+        app: LabTEST
     spec:
       containers:
         - name: postgres
