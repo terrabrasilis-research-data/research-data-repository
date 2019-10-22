@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: labtest
+spec:
+  selector:
+    matchLabels:
+      name: labtest
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        name: labtest
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
