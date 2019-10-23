@@ -1,12 +1,9 @@
-apiVersion: apps/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: labtest
   name: nginx
-  selector:
-    matchLabels:
-      app: labtest  
   annotations:
     ingress.kubernetes.io/rewrite-target: /
 spec:

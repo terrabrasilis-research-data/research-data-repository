@@ -55,9 +55,5 @@ kubectl delete service postgres
 kubectl delete service geoserver 
 kubectl delete service geonetwork 
 kubectl delete service ssh 
-
 kubectl delete deployment labtest
-kubectl delete configmap postgres-config
-kubectl delete persistentvolumeclaim postgres-pv-claim
-kubectl delete persistentvolume postgres-pv-volume
 ```
