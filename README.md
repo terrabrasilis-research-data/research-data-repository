@@ -32,7 +32,7 @@ kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/postgres-service.yaml
 ```
 
-### 3. Connect to the pods
+### 3. Connect to the services
 
 Get the services
 
@@ -40,11 +40,13 @@ Get the services
 kubectl get services
 ```
 
-### For deletion of PostgreSQL resources
+### For deletion of the resources
 
 ```shell
 kubectl delete service postgres 
-kubectl delete service ssh 
+kubectl delete service geoserver 
+kubectl delete service geonetwork 
+
 kubectl delete deployment labtest
 kubectl delete configmap postgres-config
 kubectl delete persistentvolumeclaim postgres-pv-claim
