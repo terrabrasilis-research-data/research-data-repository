@@ -16,6 +16,6 @@ spec:
   selector:
     io.kompose.service: geonetwork
   externalIPs:
-    - 0.0.0.0
+    - 10.0.0.40
 status:
   loadBalancer: {}
