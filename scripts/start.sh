@@ -17,5 +17,8 @@ kubectl apply -f kubernetes/postgres-service.yaml
 kubectl create -f kubernetes/ssh.yaml
 kubectl create -f kubernetes/ssh-service.yaml
 
+#nginx
+kubectl create -f kubernetes/nginx.yaml
+
 kubectl get pods
 kubectl get svc
