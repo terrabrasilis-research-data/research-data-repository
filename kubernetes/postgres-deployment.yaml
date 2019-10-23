@@ -19,6 +19,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
+        app: labTEST
         io.kompose.service: postgres
     spec:
       containers:
