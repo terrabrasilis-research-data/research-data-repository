@@ -7,19 +7,19 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: geonetwork
-  name: labTEST
+  name: labtest
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: labTEST
+      app: labtest
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: labTEST
+        app: labtest
         io.kompose.service: geonetwork
     spec:
       containers:

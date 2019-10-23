@@ -15,5 +15,7 @@ spec:
     targetPort: 8080
   selector:
     io.kompose.service: geonetwork
+  externalIPs:
+    - 0.0.0.0
 status:
   loadBalancer: {}

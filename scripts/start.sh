@@ -13,6 +13,9 @@ kubectl apply -f kubernetes/postgres-deployment.yaml
 kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/postgres-service.yaml
 
-kubectl get nodes
-kubectl get svc
+#ssh
+kubectl create -f kubernetes/ssh.yaml
+kubectl create -f kubernetes/ssh-service.yaml
 
+kubectl get pods
+kubectl get svc

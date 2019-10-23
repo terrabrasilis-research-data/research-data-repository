@@ -12,14 +12,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: labTEST
+      app: labtest
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: labTEST
+        app: labtest
         io.kompose.service: geoserver
     spec:
       containers:

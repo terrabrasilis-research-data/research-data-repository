@@ -13,6 +13,8 @@ A Research Data Repository provides researchers with the tools they need to stor
 
 ### 2. Create the services and the deployments
 
+run the script ['scripts/generateHostKeys.sh'](scripts/generateHostKeys.sh)
+run the script ['scripts/updateKeys.sh'](scripts/updateKeys.sh)
 run the script ['scripts/start.sh'](scripts/start.sh)
 
 ```shell
@@ -30,6 +32,10 @@ kubectl apply -f kubernetes/geonetwork-service.yaml
 kubectl apply -f kubernetes/postgres-deployment.yaml
 kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/postgres-service.yaml
+
+#ssh
+kubectl create -f kubernetes/ssh.yaml
+kubectl create -f kubernetes/ssh-service.yaml
 ```
 
 ### 3. Connect to the services
@@ -46,6 +52,7 @@ kubectl get services
 kubectl delete service postgres 
 kubectl delete service geoserver 
 kubectl delete service geonetwork 
+kubectl delete service ssh 
 
 kubectl delete deployment labtest
 kubectl delete configmap postgres-config
