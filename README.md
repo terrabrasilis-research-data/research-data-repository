@@ -14,7 +14,9 @@ A Research Data Repository provides researchers with the tools they need to stor
 ### 2. Create the services and the deployments
 
 run the script ['scripts/generateHostKeys.sh'](scripts/generateHostKeys.sh)
+
 run the script ['scripts/updateKeys.sh'](scripts/updateKeys.sh)
+
 run the script ['scripts/start.sh'](scripts/start.sh)
 
 ```shell
