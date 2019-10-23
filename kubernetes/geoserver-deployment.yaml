@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: geoserver
-  name: geoserver
+  name: labTEST
 spec:
   replicas: 1
   selector:
