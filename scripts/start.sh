@@ -14,11 +14,14 @@ kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/postgres-service.yaml
 
 #ssh
-kubectl create -f kubernetes/ssh.yaml
-kubectl create -f kubernetes/ssh-service.yaml
+#kubectl create -f kubernetes/ssh.yaml
+#kubectl create -f kubernetes/ssh-service.yaml
 
 #nginx
-kubectl create -f kubernetes/nginx.yaml
+kubectl create -f kubernetes/static-ip-svc.yaml
+kubectl get svc nginx-ingress-lb
+kubectl create -f nginx-ingress-controller.yaml
+kubectl create -f nginx-ingress.yaml
 
 kubectl get pods
 kubectl get svc

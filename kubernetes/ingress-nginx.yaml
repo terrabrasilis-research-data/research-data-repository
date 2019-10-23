@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nginx
+spec:
+  rules:
+  - http:
+      paths:
+
+      - backend:
+          serviceName: http-svc
+          servicePort: 80
+
+      - path: /labtest
+        backend:
+          serviceName: postgres
+          servicePort: 5432
+
+      - path: /labtest
+        backend:
+          serviceName: geoserver
+          servicePort: 8081
+          
+      - path: /labtest
+        backend:
+          serviceName: geonetwork
+          servicePort: 8080

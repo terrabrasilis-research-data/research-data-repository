@@ -34,10 +34,6 @@ kubectl apply -f kubernetes/geonetwork-service.yaml
 kubectl apply -f kubernetes/postgres-deployment.yaml
 kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/postgres-service.yaml
-
-#ssh
-kubectl create -f kubernetes/ssh.yaml
-kubectl create -f kubernetes/ssh-service.yaml
 ```
 
 ### 3. Connect to the services
@@ -54,6 +50,5 @@ kubectl get services
 kubectl delete service postgres 
 kubectl delete service geoserver 
 kubectl delete service geonetwork 
-kubectl delete service ssh 
 kubectl delete deployment labtest
 ```
