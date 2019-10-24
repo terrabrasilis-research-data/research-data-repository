@@ -9,14 +9,26 @@ metadata:
 spec:
   externalTrafficPolicy: Local
   type: LoadBalancer
+  
   loadBalancerIP: 104.154.109.191
   ports:
+
   - port: 80
     name: http
     targetPort: 80
-  - port: 443
-    name: https
-    targetPort: 443
+
+  - port: 5432
+    name: http
+    targetPort: 5432
+
+  - port: 8080
+    name: http
+    targetPort: 8080
+
+  - port: 8081
+    name: http
+    targetPort: 8081
+
   selector:
     # Selects nginx-ingress-controller pods
     app.kubernetes.io/name: ingress-nginx

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: labtest
+  name: ingress-nginx
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: labtest
@@ -37,8 +37,12 @@ spec:
         ports:
         - containerPort: 80
           hostPort: 80
-        - containerPort: 443
-          hostPort: 443
+        - containerPort: 5432
+          hostPort: 5432
+        - containerPort: 8080
+          hostPort: 8080
+        - containerPort: 8081
+          hostPort: 8081
         env:
           - name: POD_NAME
             valueFrom:
