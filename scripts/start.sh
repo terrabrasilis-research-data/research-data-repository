@@ -23,6 +23,5 @@ kubectl create -f kubernetes/static-ip-svc.yaml
 kubectl create -f kubernetes/nginx-ingress-controller.yaml
 kubectl create -f kubernetes/ingress-nginx.yaml
 
-kubectl get ingress nginx-ingress-lb
 kubectl get pods
 kubectl get svc

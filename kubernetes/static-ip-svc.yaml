@@ -14,19 +14,19 @@ spec:
   ports:
 
   - port: 80
-    name: http
+    name: nginx
     targetPort: 80
 
   - port: 5432
-    name: http
+    name: postgres
     targetPort: 5432
 
   - port: 8080
-    name: http
+    name: eonetwork
     targetPort: 8080
 
   - port: 8081
-    name: http
+    name: geoserver
     targetPort: 8081
 
   selector:
