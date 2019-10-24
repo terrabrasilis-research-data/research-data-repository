@@ -18,9 +18,10 @@ kubectl apply -f kubernetes/postgres-service.yaml
 #kubectl create -f kubernetes/ssh-service.yaml
 
 #nginx
-kubectl apply -f kubernetes/static-ip-svc.yaml
+kubectl create -f kubernetes/static-ip-svc.yaml
 kubectl apply -f kubernetes/nginx-ingress-controller.yaml
 kubectl apply -f kubernetes/ingress-nginx.yaml
 
+kubectl describe ingress ingress-nginx
 kubectl get pods
 kubectl get svc
