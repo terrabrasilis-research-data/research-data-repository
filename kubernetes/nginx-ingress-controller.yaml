@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: labtest
   labels:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/part-of: labtest
