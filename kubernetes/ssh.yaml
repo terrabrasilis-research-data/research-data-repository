@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: researchdatarepositorie  
+      app: rdr  
   template:
     metadata:
       labels:
-        app: researchdatarepositorie  
+        app: rdr  
     spec:
       containers:
       - name: master
