@@ -20,6 +20,9 @@ run the script ['scripts/updateKeys.sh'](scripts/updateKeys.sh)
 run the script ['scripts/start.sh'](scripts/start.sh)
 
 ```shell
+#nginx
+kubectl create -f kubernetes/nginx-pod.yaml
+
 #geoserver
 kubectl apply -f kubernetes/geoserver-deployment.yaml
 kubectl apply -f kubernetes/geoserver-data-persistentvolumeclaim.yaml
@@ -34,6 +37,9 @@ kubectl apply -f kubernetes/geonetwork-service.yaml
 kubectl apply -f kubernetes/postgres-deployment.yaml
 kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/postgres-service.yaml
+
+#nginx
+kubectl apply -f kubernetes/nginx-ingess.yaml
 ```
 
 ### 3. Connect to the services
@@ -50,5 +56,5 @@ kubectl get services
 kubectl delete service postgres 
 kubectl delete service geoserver 
 kubectl delete service geonetwork 
-kubectl delete deployment researchdatarepositorie
+kubectl delete deployment rdr
 ```

@@ -16,10 +16,6 @@ kubectl apply -f kubernetes/postgres-deployment.yaml
 kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/postgres-service.yaml
 
-#ssh
-#kubectl create -f kubernetes/ssh.yaml
-#kubectl create -f kubernetes/ssh-service.yaml
-
 #nginx
 kubectl apply -f kubernetes/nginx-ingess.yaml
 
