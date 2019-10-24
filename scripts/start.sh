@@ -1,3 +1,6 @@
+#nginx
+kubectl create -f kubernetes/nginx.yaml
+
 #geoserver
 kubectl apply -f kubernetes/geoserver-deployment.yaml
 kubectl apply -f kubernetes/geoserver-data-persistentvolumeclaim.yaml
@@ -18,7 +21,7 @@ kubectl apply -f kubernetes/postgres-service.yaml
 #kubectl create -f kubernetes/ssh-service.yaml
 
 #nginx
-kubectl apply -f nginx-ingess.yaml
+kubectl apply -f kubernetes/nginx-ingess.yaml
 
 
 kubectl get ingress

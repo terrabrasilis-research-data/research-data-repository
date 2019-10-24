@@ -4,6 +4,7 @@ metadata:
   name: ingress-nginx
 spec:
   rules:
+  - host: terrabrasilisresearchdata.dpi.inpe.br
   - http:
       paths:
 
@@ -11,17 +12,17 @@ spec:
           serviceName: http-svc
           servicePort: 80
 
-      - path: /labtest
+      - path: /
         backend:
           serviceName: postgres
           servicePort: 5432
 
-      - path: /labtest
+      - path: /
         backend:
           serviceName: geoserver
           servicePort: 8081
           
-      - path: /labtest
+      - path: /
         backend:
           serviceName: geonetwork
           servicePort: 8080

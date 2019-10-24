@@ -50,6 +50,5 @@ kubectl get services
 kubectl delete service postgres 
 kubectl delete service geoserver 
 kubectl delete service geonetwork 
-kubectl delete service nginx-ingress-lb
 kubectl delete deployment labtest
 ```
