@@ -47,7 +47,7 @@ kubectl get services
 ### For deletion of the resources
 
 ```shell
-kubectl delete service postgresql 
+kubectl delete service postgres 
 kubectl delete service geoserver 
 kubectl delete service geonetwork 
 kubectl delete service nginx-ingress-lb
