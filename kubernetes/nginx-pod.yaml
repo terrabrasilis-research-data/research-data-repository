@@ -1,8 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-      labels:
-        app: rdr
+  name: researchdatarepositorie
+  labels:
+    app: rdr
 spec:
   volumes:
   - name: shared-data

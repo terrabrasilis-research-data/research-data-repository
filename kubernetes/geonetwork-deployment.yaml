@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: geonetwork
-  name: researchdatarepositorie
+  name: rdr
 spec:
   replicas: 1
   selector:

@@ -7,19 +7,19 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: postgres
-  name: researchdatarepositorie
+  name: rdr
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: researchdatarepositorie
+      app: rdr
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: researchdatarepositorie
+        app: rdr
         io.kompose.service: postgres
     spec:
       containers:
