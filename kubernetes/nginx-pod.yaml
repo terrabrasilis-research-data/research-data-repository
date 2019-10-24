@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
       labels:
-        app: labtest
+        app: researchdatarepositorie
 spec:
   volumes:
   - name: shared-data

@@ -1,5 +1,5 @@
 #nginx
-kubectl create -f kubernetes/nginx.yaml
+kubectl create -f kubernetes/nginx-pod.yaml
 
 #geoserver
 kubectl apply -f kubernetes/geoserver-deployment.yaml
@@ -22,7 +22,6 @@ kubectl apply -f kubernetes/postgres-service.yaml
 
 #nginx
 kubectl apply -f kubernetes/nginx-ingess.yaml
-
 
 kubectl get ingress
 kubectl get pods

@@ -50,5 +50,5 @@ kubectl get services
 kubectl delete service postgres 
 kubectl delete service geoserver 
 kubectl delete service geonetwork 
-kubectl delete deployment labtest
+kubectl delete deployment researchdatarepositorie
 ```
