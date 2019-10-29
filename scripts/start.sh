@@ -21,4 +21,4 @@ kubectl apply -f kubernetes/nginx-ingess.yaml
 
 kubectl get ingress
 kubectl get pods
-kubectl get svc
+#kubectl get svc
