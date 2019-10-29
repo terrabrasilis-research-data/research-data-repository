@@ -13,10 +13,6 @@ A Research Data Repository provides researchers with the tools they need to stor
 
 ### 2. Create the services and the deployments
 
-run the script ['scripts/generateHostKeys.sh'](scripts/generateHostKeys.sh)
-
-run the script ['scripts/updateKeys.sh'](scripts/updateKeys.sh)
-
 run the script ['scripts/start.sh'](scripts/start.sh)
 
 ```shell
@@ -48,6 +44,16 @@ Get the services
 
 ```shell
 kubectl get services
+```
+
+Get a shell to the running Research Data Repositorie:
+```shell
+kubectl exec -it nginx -- /bin/bash
+```
+
+Use port 5432 to connect to PostgreSQL from machine/node present
+```shell
+psql -h localhost -U geonetwork --password -p 5432
 ```
 
 ### For deletion of the resources
