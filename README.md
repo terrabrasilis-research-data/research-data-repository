@@ -48,7 +48,7 @@ kubectl get services
 
 Get a shell to the running Research Data Repositorie:
 ```shell
-kubectl exec -it nginx -- /bin/bash
+kubectl exec -it rdr -- /bin/bash
 ```
 
 Use port 5432 to connect to PostgreSQL from machine/node present
