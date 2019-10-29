@@ -1,6 +1,3 @@
-#nginx
-kubectl create -f kubernetes/nginx-pod.yaml
-
 #geoserver
 kubectl apply -f kubernetes/geoserver-deployment.yaml
 kubectl apply -f kubernetes/geoserver-data-persistentvolumeclaim.yaml
@@ -21,4 +18,4 @@ kubectl apply -f kubernetes/nginx-ingess.yaml
 
 kubectl get ingress
 kubectl get pods
-#kubectl get svc
+kubectl get svc
