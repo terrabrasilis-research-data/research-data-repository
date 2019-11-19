@@ -23,12 +23,10 @@ Based on inspiration from `kubernetes/utils/create_from_yaml.py`
 '''
 
 import re
-import yaml
+import yaml 
 import logging
-
-import kubernetes.client
-
-
+import kubernetes
+from kubernetes import client, config
 
 def runUsageExample():
     ''' demonstrate usage by creating a simple Pod through default client
@@ -36,11 +34,12 @@ def runUsageExample():
     logging.basicConfig(level=logging.DEBUG)
     #
 #   KUBECONFIG = '/path/to/special/kubecfg.yaml'
-#   import kubernetes.config
+
 #   client = kubernetes.config.new_client_from_config(config_file=KUBECONFIG)
 #   # --or alternatively--
 #   kubernetes.config.load_kube_config(config_file=KUBECONFIG)
 
+    config.load_kube_config()
 
     fromYaml('''
 kind: Pod
