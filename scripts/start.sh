@@ -1,3 +1,6 @@
+#pod
+kubectl create -f kubernetes/pod.yaml
+
 #geoserver
 kubectl apply -f kubernetes/geoserver-deployment.yaml
 kubectl apply -f kubernetes/geoserver-data-persistentvolumeclaim.yaml
