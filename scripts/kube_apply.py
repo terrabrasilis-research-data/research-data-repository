@@ -28,7 +28,7 @@ import logging
 import kubernetes
 from kubernetes import client, config
 
-def runUsageExample():
+def runUsageExample(pod_name):
     ''' demonstrate usage by creating a simple Pod through default client
     '''
     logging.basicConfig(level=logging.DEBUG)
@@ -45,7 +45,7 @@ def runUsageExample():
 kind: Pod
 apiVersion: v1
 metadata:
-  name: dummy-pod
+  name: {}
   labels:
     blow: job
 spec:
@@ -56,7 +56,7 @@ spec:
     - /bin/sh
     - -c
     - sleep 24000
-''')
+'''.format(pod_name))
 
 def fromYaml(rawData, client=None, **kwargs):
     ''' invoke the K8s API to create or replace an object given as YAML spec.
@@ -197,4 +197,4 @@ def camel2snake(string):
 
 
 if __name__=='__main__':
-    runUsageExample()
+    runUsageExample("gabriel")
