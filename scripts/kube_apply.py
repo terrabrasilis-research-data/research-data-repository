@@ -83,14 +83,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app:'''+ pod_name + '''
+      app: '''+ pod_name + '''
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app:'''+ pod_name + '''
+        app: '''+ pod_name + '''
         io.kompose.service: geoserver
     spec:
       containers:
@@ -174,14 +174,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app:'''+ pod_name +'''
+      app: '''+ pod_name +'''
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app:'''+ pod_name +'''
+        app: '''+ pod_name +'''
         io.kompose.service: geonetwork
     spec:
       containers:
@@ -268,14 +268,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app:'''+ pod_name +'''
+      app: '''+ pod_name +'''
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app:'''+ pod_name +'''
+        app: '''+ pod_name +'''
         io.kompose.service: postgres
     spec:
       containers:
