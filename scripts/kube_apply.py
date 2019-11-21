@@ -78,7 +78,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: geoserver
-  name:'''+pod_name'''
+  name:'''+'geoserver'+'''
 spec:
   replicas: 1
   selector:
@@ -169,7 +169,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: geonetwork
-  name:'''+ pod_name +'''
+  name:'''+'geonetwork'+'''
 spec:
   replicas: 1
   selector:
@@ -263,7 +263,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: postgres
-  name:'''+ pod_name +'''
+  name:'''+'postgis'+'''
 spec:
   replicas: 1
   selector:
