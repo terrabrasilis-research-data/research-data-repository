@@ -31,10 +31,10 @@ spec:
         resources: {}
         volumeMounts:
         - mountPath: /opt/geoserver/data_dir
-          name: geoserver-data
+          name: task-pv-storage
       restartPolicy: Always
       volumes:
-      - name: geoserver-data
-        persistentVolumeClaim:
-          claimName: geoserver-data
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: repositorie-data
 status: {}

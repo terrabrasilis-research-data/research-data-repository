@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     container_name: core4geonetwork
     ports:
-      - "8080:8080"
+      - "8181:8080"
     environment:
       DATA_DIR: /var/lib/geonetwork_data
       POSTGRES_DB_HOST: db4geonetwork
@@ -23,7 +23,7 @@ services:
     restart: unless-stopped
     container_name: db4geonetwork
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_PASSWORD: geonetwork
       POSTGRES_USER: geonetwork
@@ -37,7 +37,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "8081:8080"
+      - "8082:8080"
     environment:
       GEOSERVER_DATA_DIR: geonetwork
       GEOWEBCACHE_CACHE_DIR: geonetwork

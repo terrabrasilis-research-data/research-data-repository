@@ -35,10 +35,10 @@ spec:
         resources: {}
         volumeMounts:
         - mountPath: /var/lib/geonetwork_data
-          name: geonetwork
+          name: task-pv-storage
       restartPolicy: Always
       volumes:
-      - name: geonetwork
-        persistentVolumeClaim:
-          claimName: geonetwork
+        - name: task-pv-storage
+          persistentVolumeClaim:
+            claimName: repositorie-data
 status: {}

@@ -10,32 +10,29 @@ A Research Data Repository provides researchers with the tools they need to stor
 
 ### 1. Create Kubernetes cluster
 
+run the script ['scripts/dind-cluster/dind-cluster-v1.13.sh'](scripts/dind-cluster/dind-cluster-v1.13.sh)
+
 
 ### 2. Create the services and the deployments
 
 run the script ['scripts/start.sh'](scripts/start.sh)
 
 ```shell
-#nginx
-kubectl create -f kubernetes/nginx-pod.yaml
+#PersistentVolume
+kubectl apply -f kubernetes/pv.yaml
+kubectl apply -f kubernetes/pv-claim.yaml
+
+#postgis
+kubectl apply -f kubernetes/postgres-deployment.yaml
+kubectl apply -f kubernetes/postgres-service.yaml
 
 #geoserver
 kubectl apply -f kubernetes/geoserver-deployment.yaml
-kubectl apply -f kubernetes/geoserver-data-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/geoserver-service.yaml
 
 #geonetwork
 kubectl apply -f kubernetes/geonetwork-deployment.yaml
-kubectl apply -f kubernetes/geonetwork-persistentvolumeclaim.yaml
 kubectl apply -f kubernetes/geonetwork-service.yaml
-
-#postgis
-kubectl apply -f kubernetes/postgres-deployment.yaml
-kubectl apply -f kubernetes/postgres-persistentvolumeclaim.yaml
-kubectl apply -f kubernetes/postgres-service.yaml
-
-#nginx
-kubectl apply -f kubernetes/nginx-ingess.yaml
 ```
 
 ### 3. Connect to the services
@@ -46,11 +43,6 @@ Get the services
 kubectl get services
 ```
 
-Get a shell to the running Research Data Repositorie:
-```shell
-kubectl exec -it rdr -- /bin/bash
-```
-
 Use port 5432 to connect to PostgreSQL from machine/node present
 ```shell
 psql -h localhost -U geonetwork --password -p 5432
@@ -59,8 +51,10 @@ psql -h localhost -U geonetwork --password -p 5432
 ### For deletion of the resources
 
 ```shell
-kubectl delete service postgres 
-kubectl delete service geoserver 
-kubectl delete service geonetwork 
-kubectl delete deployment rdr
+sudo kubectl delete service postgres 
+sudo kubectl delete service geonetwork 
+sudo kubectl delete service geoserver
+sudo kubectl delete deployment geonetwork
+sudo kubectl delete deployment geoserver
+sudo kubectl delete deployment postgres
 ```
