@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
@@ -7,19 +7,15 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: geoserver
-  name: rdr
+  name: geoserver
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app: rdr
   strategy:
     type: Recreate
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: rdr
         io.kompose.service: geoserver
     spec:
       containers:
