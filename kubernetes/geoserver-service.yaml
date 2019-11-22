@@ -8,6 +8,7 @@ metadata:
   labels:
     io.kompose.service: geoserver
   name: geoserver
+  namespace: repositorie
 spec:
   selector:
     io.kompose.service: geonetwork

@@ -8,11 +8,12 @@ metadata:
   labels:
     io.kompose.service: postgres
   name: postgres
+  namespace: repositorie
 spec:
   selector:
     io.kompose.service: geonetwork
   ports:
-    - port: 5433
+    - port: 5432
       targetPort: 5432
       protocol: TCP
   type: NodePort

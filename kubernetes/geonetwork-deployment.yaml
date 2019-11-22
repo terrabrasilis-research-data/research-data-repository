@@ -14,6 +14,7 @@ spec:
     type: Recreate
   template:
     metadata:
+      namespace: repositorie
       creationTimestamp: null
       labels:
         io.kompose.service: geonetwork
@@ -35,10 +36,10 @@ spec:
         resources: {}
         volumeMounts:
         - mountPath: /var/lib/geonetwork_data
-          name: task-pv-storage
+          name: repositorie-data
       restartPolicy: Always
       volumes:
-        - name: task-pv-storage
+        - name: repositorie-data
           persistentVolumeClaim:
             claimName: repositorie-data
 status: {}
