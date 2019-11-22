@@ -43,9 +43,9 @@ Get the services
 kubectl get services
 ```
 
-Use port 5432 to connect to PostgreSQL from machine/node present
+Use port 5433 to connect to PostgreSQL from machine/node present
 ```shell
-psql -h localhost -U geonetwork --password -p 5432
+psql -h [host_port] -U geonetwork --password -p 5432
 ```
 
 ### For deletion of the resources

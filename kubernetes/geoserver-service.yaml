@@ -9,11 +9,10 @@ metadata:
     io.kompose.service: geoserver
   name: geoserver
 spec:
-  ports:
-  - name: "8081"
-    port: 8081
-    targetPort: 8080
   selector:
-    io.kompose.service: geoserver
-status:
-  loadBalancer: {}
+    io.kompose.service: geonetwork
+  ports:
+    - port: 8081
+      targetPort: 8080
+      protocol: TCP
+  type: NodePort

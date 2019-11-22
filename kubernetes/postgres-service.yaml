@@ -9,11 +9,10 @@ metadata:
     io.kompose.service: postgres
   name: postgres
 spec:
-  ports:
-  - name: "5432"
-    port: 5432
-    targetPort: 5432
   selector:
-    io.kompose.service: postgres
-status:
-  loadBalancer: {}
+    io.kompose.service: geonetwork
+  ports:
+    - port: 5433
+      targetPort: 5432
+      protocol: TCP
+  type: NodePort
