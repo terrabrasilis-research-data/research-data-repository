@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: repositorie-data
-  namespace: repositorie
+  name: repositorie-data-claim
 spec:
   storageClassName: manual
   accessModes:

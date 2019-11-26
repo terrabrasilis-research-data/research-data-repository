@@ -1,23 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert
-    kompose.version: 1.16.0 (0c01309)
-  creationTimestamp: null
   labels:
-    io.kompose.service: postgres
-  name: postgres
+    service: postgis
+  name: postgis
 spec:
   replicas: 1
   strategy:
     type: Recreate
   template:
     metadata:
-      namespace: repositorie
-      creationTimestamp: null
       labels:
-        io.kompose.service: postgres
+        service: postgis
+      namespace: repositorie
     spec:
       containers:
       - env:
@@ -37,5 +32,5 @@ spec:
       volumes:
         - name: repositorie-data
           persistentVolumeClaim:
-            claimName: repositorie-data
+            claimName: repositorie-data-claim
 status: {}
