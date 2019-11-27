@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    service: geonetwork
+    name: geonetwork
   name: geonetwork
 spec:
   replicas: 1
@@ -11,8 +11,7 @@ spec:
   template:
     metadata:  
       labels:
-        service: geonetwork
-      namespace: repositorie
+        name: geonetwork
     spec:
       containers:
       - env:

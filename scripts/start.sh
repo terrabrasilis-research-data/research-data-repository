@@ -12,7 +12,9 @@ kubectl apply -f kubernetes/geoserver-service.yaml
 
 #owncloud
 kubectl apply -f kubernetes/owncloud-deployment.yaml
-kubectl apply -f kubernetes/owncloud-service.yaml
+kubectl apply -f kubernetes/nginx-deployment.yaml
+kubectl apply -f kubernetes/nginx-service.yaml
+kubectl apply -f kubernetes/postgresql-deployment.yaml
 
 #geonetwork
 #kubectl apply -f kubernetes/geonetwork-deployment.yaml

@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    name: nginx
+  name: nginx
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        name: nginx
+    spec:
+      containers:
+      - args:
+        - app:nginx
+        env:
+        - name: OWNCLOUD_PHP_FPM_HOST
+          value: owncloud
+        - name: OWNCLOUD_PHP_FPM_PORT
+          value: "9000"
+        image: sameersbn/owncloud:10.0.10-0
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}
+      restartPolicy: Always
+status: {}

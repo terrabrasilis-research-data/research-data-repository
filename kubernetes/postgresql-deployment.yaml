@@ -2,31 +2,30 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    name: geoserver
-  name: geoserver
+    name: postgresql
+  name: postgresql
 spec:
   replicas: 1
   strategy:
     type: Recreate
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        name: geoserver
+        name: postgresql
     spec:
       containers:
       - env:
-        - name: GEOSERVER_DATA_DIR
-          value: geonetwork
-        - name: GEOWEBCACHE_CACHE_DIR
-          value: geonetwork
-        image: kartoza/geoserver:2.13.0
-        name: geoserver4geonetwork
-        ports:
-        - containerPort: 8080
+        - name: DB_NAME
+          value: owncloud_db
+        - name: DB_PASS
+          value: password
+        - name: DB_USER
+          value: owncloud
+        image: sameersbn/postgresql:9.6-4
+        name: postgresql
         resources: {}
         volumeMounts:
-        - mountPath: /opt/geoserver/data_dir
+        - mountPath: /var/lib/postgresql
           name: repositorie-data
       restartPolicy: Always
       volumes:

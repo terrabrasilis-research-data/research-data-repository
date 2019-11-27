@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    service: postgis
+    name: postgis
   name: postgis
 spec:
   replicas: 1
@@ -11,8 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        service: postgis
-      namespace: repositorie
+        name: postgis
     spec:
       containers:
       - env:
@@ -23,7 +22,7 @@ spec:
         image: mdillon/postgis
         name: db4geonetwork
         ports:
-        - containerPort: 5432
+        - containerPort: 5433
         resources: {}
         volumeMounts:
         - mountPath: /var/lib/postgresql/data

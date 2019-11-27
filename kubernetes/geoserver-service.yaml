@@ -2,7 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: geoserver
-  namespace: repositorie
+  labels:
+    name: geoserver
 spec:
   ports:
     - port: 8081
