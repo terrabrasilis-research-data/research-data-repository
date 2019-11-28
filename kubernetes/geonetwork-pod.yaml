@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: geonetwork
+  labels:
+    name: geonetwork
+spec:
+  containers:
+    - name: core4geonetwork
+      image: geonetwork:postgres
+      env:
+        - name: DATA_DIR
+          value: /var/lib/geonetwork_data
+        - name: POSTGRES_DB_HOST
+          value: postgis
+        - name: POSTGRES_DB_PASSWORD
+          value: geonetwork
+        - name: POSTGRES_DB_USERNAME
+          value: geonetwork
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+      volumeMounts:
+        - mountPath: /var/lib/geonetwork_data
+          name: repositorie-data
+  volumes:
+    - name: repositorie-data
+      persistentVolumeClaim:
+        claimName: repositorie-data-claim
+status: {}

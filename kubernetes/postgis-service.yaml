@@ -7,6 +7,6 @@ metadata:
 spec:
   ports:
     - port: 5432
-      targetPort: 5432
+      targetPort: 5433
       protocol: TCP
-  type: NodePort
+  type: ClusterIP

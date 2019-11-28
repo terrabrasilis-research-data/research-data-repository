@@ -11,14 +11,14 @@ kubectl apply -f kubernetes/geoserver-pod.yaml
 kubectl apply -f kubernetes/geoserver-service.yaml
 
 #owncloud
-kubectl create -f kubernetes/owncloud-pod.yaml
-kubectl apply -f kubernetes/owncloud-service.yaml
 kubectl apply -f kubernetes/postgresql-pod.yaml
 kubectl apply -f kubernetes/postgresql-service.yaml
+kubectl create -f kubernetes/owncloud-pod.yaml
+kubectl apply -f kubernetes/owncloud-service.yaml
 
 #geonetwork
-#kubectl apply -f kubernetes/geonetwork-deployment.yaml
-#kubectl apply -f kubernetes/geonetwork-service.yaml
+kubectl apply -f kubernetes/geonetwork-pod.yaml
+kubectl apply -f kubernetes/geonetwork-service.yaml
 
 kubectl get pods
 kubectl get svc

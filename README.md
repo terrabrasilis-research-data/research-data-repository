@@ -23,38 +23,43 @@ kubectl apply -f kubernetes/pv.yaml
 kubectl apply -f kubernetes/pv-claim.yaml
 
 #postgis
-kubectl apply -f kubernetes/postgres-deployment.yaml
-kubectl apply -f kubernetes/postgres-service.yaml
+kubectl apply -f kubernetes/postgis-pod.yaml
+kubectl apply -f kubernetes/postgis-service.yaml
 
 #geoserver
-kubectl apply -f kubernetes/geoserver-deployment.yaml
+kubectl apply -f kubernetes/geoserver-pod.yaml
 kubectl apply -f kubernetes/geoserver-service.yaml
 
+#owncloud
+kubectl create -f kubernetes/owncloud-pod.yaml
+kubectl apply -f kubernetes/owncloud-service.yaml
+kubectl apply -f kubernetes/postgresql-pod.yaml
+kubectl apply -f kubernetes/postgresql-service.yaml
+
 #geonetwork
-kubectl apply -f kubernetes/geonetwork-deployment.yaml
+kubectl apply -f kubernetes/geonetwork-pod.yaml
 kubectl apply -f kubernetes/geonetwork-service.yaml
 ```
 
 ### 3. Connect to the services
 
-Get the services
-
+To check if a Service is running, use.
 ```shell
-kubectl get services
-```
-
-Use port 5433 to connect to PostgreSQL from machine/node present
-```shell
-psql -h [host_port] -U geonetwork --password -p 5432
+sudo kubectl exec -it [pod_name] -- /bin/bash
 ```
 
 ### For deletion of the resources
 
 ```shell
-sudo kubectl delete service postgres 
-sudo kubectl delete service geonetwork 
-sudo kubectl delete service geoserver
-sudo kubectl delete deployment geonetwork
-sudo kubectl delete deployment geoserver
-sudo kubectl delete deployment postgres
+sudo kubectl delete service postgis 
+sudo kubectl delete service postgresql 
+sudo kubectl delete service geonetwork
+sudo kubectl delete service geoserver 
+sudo kubectl delete service owncloud 
+
+sudo kubectl delete pods geoserver
+sudo kubectl delete pods geonetwork
+sudo kubectl delete pods owncloud
+sudo kubectl delete pods postgis
+sudo kubectl delete pods postgresql
 ```

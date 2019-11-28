@@ -7,13 +7,12 @@ metadata:
 spec:
   containers:
     - name: db4geonetwork
-      image: sameersbn/postgresql:9.6-4
+      image: mdillon/postgis
       env:
         - name: POSTGRES_PASSWORD
           value: geonetwork
         - name: POSTGRES_USER
           value: geonetwork
-          value: password
       ports:
         - containerPort: 5432
           protocol: TCP
