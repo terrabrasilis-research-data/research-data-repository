@@ -1,28 +1,27 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: postgis
+  name: geoserver
   labels:
-    name: postgis
+    name: geoserver
 spec:
   containers:
-    - name: db4geonetwork
-      image: sameersbn/postgresql:9.6-4
+    - name: geoserver4geonetwork
+      image: kartoza/geoserver:2.13.0
       env:
-        - name: POSTGRES_PASSWORD
+        - name: GEOSERVER_DATA_DIR
           value: geonetwork
-        - name: POSTGRES_USER
+        - name: GEOWEBCACHE_CACHE_DIR
           value: geonetwork
-          value: password
       ports:
-        - containerPort: 5432
+        - containerPort: 8080
           protocol: TCP
       volumeMounts:
-        - mountPath: /var/lib/postgis/data
+        - mountPath: /opt/geoserver/data_dir
           name: repositorie-data
       livenessProbe:
         tcpSocket:
-          port: 5432
+          port: 8080
         initialDelaySeconds: 30
         timeoutSeconds: 5
   volumes:

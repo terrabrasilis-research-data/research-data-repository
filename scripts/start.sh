@@ -7,7 +7,7 @@ kubectl apply -f kubernetes/postgis-pod.yaml
 kubectl apply -f kubernetes/postgis-service.yaml
 
 #geoserver
-kubectl apply -f kubernetes/geoserver-deployment.yaml
+kubectl apply -f kubernetes/geoserver-pod.yaml
 kubectl apply -f kubernetes/geoserver-service.yaml
 
 #owncloud
