@@ -19,11 +19,6 @@ spec:
       volumeMounts:
         - mountPath: /var/lib/postgis/data
           name: repositorie-data
-      livenessProbe:
-        tcpSocket:
-          port: 5432
-        initialDelaySeconds: 30
-        timeoutSeconds: 5
   volumes:
     - name: repositorie-data
       persistentVolumeClaim:

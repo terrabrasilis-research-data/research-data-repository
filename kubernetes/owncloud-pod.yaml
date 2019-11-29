@@ -48,13 +48,9 @@ spec:
       volumeMounts:
         - mountPath: /var/lib/owncloud
           name: repositorie-data
-      livenessProbe:
-        tcpSocket:
-          port: 9000
-        initialDelaySeconds: 5
-        timeoutSeconds: 1
   volumes:
     - name: repositorie-data
       persistentVolumeClaim:
         claimName: repositorie-data-claim
 status: {}
+
