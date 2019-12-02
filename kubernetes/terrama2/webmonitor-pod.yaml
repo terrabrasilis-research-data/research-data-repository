@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webmonitor
+  labels:
+    name: webmonitor   
+spec:
+  containers:
+  - image: terrama2/terrama2-webmonitor:4.0.11
+    name: webmonitor
+    ports:
+    - containerPort: 36001
+    resources: {}
+    volumeMounts:
+    - mountPath: /data
+      name: repositorie-data
+    - mountPath: /shared-data
+      name: repositorie-data
+    - mountPath: /root/.pgpass
+      name: repositorie-data
+  restartPolicy: Always
+  volumes:
+    - name: repositorie-data
+      persistentVolumeClaim:
+        claimName: repositorie-data-claim
+status: {}

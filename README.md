@@ -19,26 +19,37 @@ run the script ['scripts/start.sh'](scripts/start.sh)
 
 ```shell
 #PersistentVolume
-kubectl apply -f kubernetes/pv.yaml
-kubectl apply -f kubernetes/pv-claim.yaml
+kubectl apply -f kubernetes/volume/pv.yaml
+kubectl apply -f kubernetes/volume/pv-claim.yaml
 
 #postgis
-kubectl apply -f kubernetes/postgis-pod.yaml
-kubectl apply -f kubernetes/postgis-service.yaml
+kubectl apply -f kubernetes/postgis/postgis-pod.yaml
+kubectl apply -f kubernetes/postgis/postgis-service.yaml
 
 #geoserver
-kubectl apply -f kubernetes/geoserver-pod.yaml
-kubectl apply -f kubernetes/geoserver-service.yaml
+kubectl apply -f kubernetes/geoserver/geoserver-pod.yaml
+kubectl apply -f kubernetes/geoserver/geoserver-service.yaml
 
 #owncloud
-kubectl create -f kubernetes/owncloud-pod.yaml
-kubectl apply -f kubernetes/owncloud-service.yaml
-kubectl apply -f kubernetes/postgresql-pod.yaml
-kubectl apply -f kubernetes/postgresql-service.yaml
+kubectl apply -f kubernetes/owncloud/postgresql-pod.yaml
+kubectl apply -f kubernetes/owncloud/postgresql-service.yaml
+kubectl create -f kubernetes/owncloud/owncloud-pod.yaml
+kubectl apply -f kubernetes/owncloud/owncloud-service.yaml
 
 #geonetwork
-kubectl apply -f kubernetes/geonetwork-pod.yaml
-kubectl apply -f kubernetes/geonetwork-service.yaml
+kubectl apply -f kubernetes/geonetwork/geonetwork-pod.yaml
+kubectl apply -f kubernetes/geonetwork/geonetwork-service.yaml
+
+#terrama2
+kubectl apply -f kubernetes/terrama2/alert-pod.yaml
+kubectl apply -f kubernetes/terrama2/analysis-pod.yaml
+kubectl apply -f kubernetes/terrama2/collector-pod.yaml
+kubectl apply -f kubernetes/terrama2/interpolator-pod.yaml
+kubectl apply -f kubernetes/terrama2/view-pod.yaml
+kubectl apply -f kubernetes/terrama2/webapp-pod.yaml
+kubectl apply -f kubernetes/terrama2/webmonitor-pod.yaml
+kubectl apply -f kubernetes/terrama2/webapp-service.yaml
+kubectl apply -f kubernetes/terrama2/webmonitor-service.yaml
 ```
 
 ### 3. Connect to the services
@@ -56,10 +67,20 @@ sudo kubectl delete service postgresql
 sudo kubectl delete service geonetwork
 sudo kubectl delete service geoserver 
 sudo kubectl delete service owncloud 
+sudo kubectl delete service terrama2app 
+sudo kubectl delete service terrama2monitor 
+
 
 sudo kubectl delete pods geoserver
 sudo kubectl delete pods geonetwork
 sudo kubectl delete pods owncloud
 sudo kubectl delete pods postgis
 sudo kubectl delete pods postgresql
+sudo kubectl delete pods webapp 
+sudo kubectl delete pods webmonitor 
+sudo kubectl delete pods alert 
+sudo kubectl delete pods analysis 
+sudo kubectl delete pods collector 
+sudo kubectl delete pods view 
+sudo kubectl delete pods interpolator 
 ```

@@ -1,0 +1,37 @@
+{
+  "basePath": "/",
+  "port": 36000,
+  "defaultFilePathList": [
+    "/data",
+    "/shared-data"
+  ],
+  "defaultExecutablePath": "/opt/terrama2/4.0.11/bin",
+  "defaultExecutableName": "terrama2_service",
+  "disablePDF": true,
+  "debug": true,
+  "OGR2OGR": "ogr2ogr",
+  "SHP2PGSQL": "shp2pgsql",
+  "db": {
+    "username": "geonetwork",
+    "password": "geonetwork",
+    "database": "terrama2",
+    "host": "db4geonetwork",
+    "port": 5432,
+    "dialect": "postgres",
+    "define": {
+      "schema": "terrama2"
+    },
+    "logging": false
+  },
+  "toolsMenu": [
+    {
+      "textEn": "Example",
+      "textEs": "Ejemplo",
+      "textFr": "Exemple",
+      "textPt": "Exemplo",
+      "url": "http://example.com/",
+      "openInNewTab": true
+    }
+  ],
+  "webAppId": "default|||$2a$10$qN3CVp6gMJ59S1JDwO3kGe2nxq.QpJ9/XAOjshCRzk7wTVpVAqm/a"
+}

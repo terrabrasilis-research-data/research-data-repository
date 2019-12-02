@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webmonitor
+  labels:
+    name: webmonitor
+spec:
+  ports:
+  - name: "36001"
+    port: 36001
+    targetPort: 36001
+  selector:
+    name: webmonitor
+  type: NodePort

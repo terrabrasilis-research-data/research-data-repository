@@ -17,6 +17,8 @@ services:
       - postgres
     volumes:
       - geonetwork:/var/lib/geonetwork_data
+    networks:
+      -  net
 
   postgres:
     image: mdillon/postgis
@@ -29,6 +31,8 @@ services:
       POSTGRES_USER: geonetwork
     volumes:
       - postgres:/var/lib/postgresql/data
+    networks:
+      -  net
 
   geoserver:
     image: kartoza/geoserver:2.13.0
@@ -43,7 +47,14 @@ services:
       GEOWEBCACHE_CACHE_DIR: geonetwork
     volumes:
       - geoserver-data:/opt/geoserver/data_dir
+    networks:
+      -  net
 
+networks:
+  net: 
+    external: 
+      name: net
+      
 volumes:
   geonetwork:
   geoserver-data:

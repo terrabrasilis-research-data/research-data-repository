@@ -1,0 +1,7 @@
+webmonitor
+    - mountPath: /opt/terrama2/4.0.11/webmonitor/config/instances/default.json
+      name: repositorie-data
+
+webapp
+    - mountPath: /opt/terrama2/4.0.11/webapp/config/instances/default.json
+      name: repositorie-data
