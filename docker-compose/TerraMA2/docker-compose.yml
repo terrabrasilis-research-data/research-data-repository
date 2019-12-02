@@ -14,7 +14,7 @@ services:
       - "${TERRAMA2_CONFIG_DIR}/terrama2_webapp.json:/opt/terrama2/${TERRAMA2_TAG}/webapp/config/instances/default.json"
       - "${TERRAMA2_CONFIG_DIR}/.pgpass:/root/.pgpass"
     networks:
-      - net
+      -  postgisgeoservergeonetwork_default
 
   # TerraMA2 Web Monitor
   webmonitor:
@@ -30,7 +30,7 @@ services:
       - "${TERRAMA2_CONFIG_DIR}/terrama2_webmonitor.json:/opt/terrama2/${TERRAMA2_TAG}/webmonitor/config/instances/default.json"
       - "${TERRAMA2_CONFIG_DIR}/.pgpass:/root/.pgpass"
     networks:
-      - net
+      -  postgisgeoservergeonetwork_default
     links:
       - webapp
 
@@ -47,7 +47,7 @@ services:
       - "terrama2_shared_vol:/shared-data"
     tty: true
     networks:
-      - net
+      -  postgisgeoservergeonetwork_default
 
   # TerraMA2 Analysis Service using TerraMA2 Base
   analysis:
@@ -62,7 +62,7 @@ services:
       - "terrama2_shared_vol:/shared-data"
     tty: true
     networks:
-      - net
+      -  postgisgeoservergeonetwork_default
 
   # TerraMA2 View Service using TerraMA2 Base
   view:
@@ -77,7 +77,7 @@ services:
       - "terrama2_shared_vol:/shared-data"
     tty: true
     networks:
-      - net
+      -  postgisgeoservergeonetwork_default
 
   # TerraMA2 Alert Service using TerraMA2 Base
   alert:
@@ -92,7 +92,7 @@ services:
       - "terrama2_shared_vol:/shared-data"
     tty: true
     networks:
-      - net
+      -  postgisgeoservergeonetwork_default
 
   # TerraMA2 Interpolator Service using TerraMA2 Base
   interpolator:
@@ -107,11 +107,13 @@ services:
       - "terrama2_shared_vol:/shared-data"
     tty: true
     networks:
-      - net
+      -  postgisgeoservergeonetwork_default
 
 networks:
-  net:
-
+  postgisgeoservergeonetwork_default: 
+    external: 
+      name: postgisgeoservergeonetwork_default
+      
 volumes:
   data_vol:
   terrama2_shared_vol:
