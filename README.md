@@ -33,6 +33,7 @@ kubectl apply -f kubernetes/geoserver/geoserver-service.yaml
 #owncloud
 kubectl apply -f kubernetes/owncloud/postgresql-pod.yaml
 kubectl create -f kubernetes/owncloud/owncloud-pod.yaml
+kubectl apply -f kubernetes/owncloud/postgresql-service.yaml
 kubectl apply -f kubernetes/owncloud/owncloud-service.yaml
 
 #geonetwork
@@ -63,6 +64,7 @@ sudo kubectl exec -it [pod_name] -- /bin/bash
 ```shell
 sudo kubectl delete service postgis
 sudo kubectl delete service geonetwork
+sudo kubectl delete service postgresql
 sudo kubectl delete service geoserver 
 sudo kubectl delete service owncloud 
 sudo kubectl delete service webapp 
