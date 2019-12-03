@@ -32,7 +32,6 @@ kubectl apply -f kubernetes/geoserver/geoserver-service.yaml
 
 #owncloud
 kubectl apply -f kubernetes/owncloud/postgresql-pod.yaml
-kubectl apply -f kubernetes/owncloud/postgresql-service.yaml
 kubectl create -f kubernetes/owncloud/owncloud-pod.yaml
 kubectl apply -f kubernetes/owncloud/owncloud-service.yaml
 
@@ -62,13 +61,12 @@ sudo kubectl exec -it [pod_name] -- /bin/bash
 ### For deletion of the resources
 
 ```shell
-sudo kubectl delete service postgis 
-sudo kubectl delete service postgresql 
+sudo kubectl delete service postgis
 sudo kubectl delete service geonetwork
 sudo kubectl delete service geoserver 
 sudo kubectl delete service owncloud 
-sudo kubectl delete service terrama2app 
-sudo kubectl delete service terrama2monitor 
+sudo kubectl delete service webapp 
+sudo kubectl delete service webmonitor 
 
 
 sudo kubectl delete pods geoserver
