@@ -70,7 +70,6 @@ sudo kubectl delete service owncloud
 sudo kubectl delete service webapp 
 sudo kubectl delete service webmonitor 
 
-
 sudo kubectl delete pods geoserver
 sudo kubectl delete pods geonetwork
 sudo kubectl delete pods owncloud

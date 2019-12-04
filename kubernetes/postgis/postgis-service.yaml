@@ -6,7 +6,8 @@ metadata:
     name: postgis
 spec:
   ports:
-    - port: 5432
+    - nodePort: 30040
+      port: 5432
       targetPort: 5432
       protocol: TCP
   selector:

@@ -6,7 +6,7 @@ metadata:
     name: owncloud
 spec:
   ports:
-    - name: php-fpm
+    - nodePort: 30030
       port: 9000
       targetPort: 9000
       protocol: TCP

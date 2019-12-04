@@ -6,7 +6,7 @@ metadata:
     name: webapp
 spec:
   ports:
-  - name: "36000"
+  - nodePort: 30050
     port: 36000
     targetPort: 36000
   selector:
