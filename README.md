@@ -14,7 +14,7 @@ run the script ['scripts/dind-cluster/dind-cluster-v1.13.sh'](scripts/dind-clust
 
 or
 
-install ['https://kind.sigs.k8s.io/'](kind) and run
+install ['kind'](https://kind.sigs.k8s.io/) and run
 
 ```shell
 sudo kind create cluster --config cluster/cluster-config.yaml --name TBRD
