@@ -12,6 +12,13 @@ A Research Data Repository provides researchers with the tools they need to stor
 
 run the script ['scripts/dind-cluster/dind-cluster-v1.13.sh'](scripts/dind-cluster/dind-cluster-v1.13.sh)
 
+or
+
+install ['https://kind.sigs.k8s.io/'](kind) and run
+
+```shell
+sudo kind create cluster --config cluster/cluster-config.yaml --name TBRD
+```
 
 ### 2. Create the services and the deployments
 
