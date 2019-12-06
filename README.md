@@ -10,7 +10,7 @@ A Research Data Repository provides researchers with the tools they need to stor
 
 ### 1. Create Kubernetes cluster
 
-run the script ['scripts/dind-cluster/dind-cluster-v1.13.sh'](scripts/dind-cluster/dind-cluster-v1.13.sh)
+run the script ['cluster/dind-cluster/dind-cluster-v1.13.sh'](cluster/dind-cluster/dind-cluster-v1.13.sh)
 
 or
 
