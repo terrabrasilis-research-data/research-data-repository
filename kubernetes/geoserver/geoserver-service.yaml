@@ -6,8 +6,10 @@ metadata:
     name: geoserver
 spec:
   ports:
-  - nodePort: 30020
-    port: 8080
-    targetPort: 8080
-    protocol: TCP
+    - nodePort: 30020
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    name: geoserver
   type: NodePort
