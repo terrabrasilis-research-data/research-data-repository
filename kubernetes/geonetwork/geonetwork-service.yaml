@@ -6,8 +6,6 @@ metadata:
     name: geonetwork
 spec:
   ports:
-    - nodePort: 30010
-      port: 8080
-      targetPort: 8080
-      protocol: TCP
-  type: NodePort
+    - port: 8080
+  selector:
+    name: geonetwork

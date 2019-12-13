@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nginx
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  # - host: terrabrasilisresearchdata.dpi.inpe.br
+  - http:
+      paths:
+      - path: /geoserver
+        backend:
+          serviceName: geoserver
+          servicePort: 8080
+          
+      - path: /geonetwork
+        backend:
+          serviceName: geonetwork
+          servicePort: 8080
+
+      - path: /owncloud
+        backend:
+          serviceName: owncloud
+          servicePort: 9000

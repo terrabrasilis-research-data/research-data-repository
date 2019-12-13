@@ -17,9 +17,6 @@ spec:
           value: geonetwork
         - name: POSTGRES_DB_USERNAME
           value: geonetwork
-      ports:
-        - containerPort: 8080
-          protocol: TCP
       volumeMounts:
         - mountPath: /var/lib/geonetwork_data
           name: repositorie-data
