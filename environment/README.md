@@ -23,7 +23,7 @@ To use kind run `setup.sh` script.
 
 ```shell
 chmod + environment/setup.sh
-/environment/setup.sh
+environment/setup.sh
 ```
 
 > Note that all environment testing has been done on `kind`, so this is the recommended testing environment.
