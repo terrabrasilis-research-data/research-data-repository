@@ -6,6 +6,8 @@ metadata:
     name: postgis
 spec:
   ports:
+    # In the production version, is it interesting that the database is
+    # not accessed by services other than those created by the user?
     - nodePort: 30040
       port: 5432
       targetPort: 5432

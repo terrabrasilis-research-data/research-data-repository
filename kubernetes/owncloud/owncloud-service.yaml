@@ -6,10 +6,6 @@ metadata:
     name: owncloud
 spec:
   ports:
-    - nodePort: 30030
-      port: 9000
-      targetPort: 9000
-      protocol: TCP
+    - port: 9000
   selector:
     name: owncloud
-  type: NodePort

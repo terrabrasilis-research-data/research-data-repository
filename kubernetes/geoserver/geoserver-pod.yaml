@@ -13,9 +13,6 @@ spec:
           value: geonetwork
         - name: GEOWEBCACHE_CACHE_DIR
           value: geonetwork
-      ports:
-        - containerPort: 8080
-          protocol: TCP
       volumeMounts:
         - mountPath: /opt/geoserver/data_dir
           name: repositorie-data
