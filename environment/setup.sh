@@ -15,7 +15,6 @@ kubectl apply -f environment/mandatory.yaml
 kubectl patch deployments -n ingress-nginx nginx-ingress-controller -p "$(cat environment/kind/nginx-kind-paths.json)"
 kubectl apply -f kubernetes/nginx/nginx-ingress.yaml
 
-
 # configure environment
 # PersistentVolume
 kubectl apply -f kubernetes/volume/pv.yaml
@@ -32,10 +31,7 @@ kubectl apply -f kubernetes/geoserver/geoserver-pod.yaml
 kubectl apply -f kubernetes/geoserver/geoserver-service.yaml
 
 # owncloud
-# ToDo: Use same database pod for all services
-kubectl apply -f kubernetes/owncloud/postgresql-pod.yaml
-kubectl apply -f kubernetes/owncloud/postgresql-service.yaml
-kubectl create -f kubernetes/owncloud/owncloud-pod.yaml
+kubectl apply -f kubernetes/owncloud/owncloud-pod.yaml
 kubectl apply -f kubernetes/owncloud/owncloud-service.yaml
 
 # geonetwork

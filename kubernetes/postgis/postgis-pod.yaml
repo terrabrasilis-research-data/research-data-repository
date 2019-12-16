@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: db4geonetwork
-      image: mdillon/postgis
+      image: mdillon/postgis:9.6
       env:
         - name: POSTGRES_PASSWORD
           value: geonetwork

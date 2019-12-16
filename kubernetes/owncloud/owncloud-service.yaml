@@ -6,6 +6,6 @@ metadata:
     name: owncloud
 spec:
   ports:
-    - port: 9000
+      - port: 8080
   selector:
     name: owncloud

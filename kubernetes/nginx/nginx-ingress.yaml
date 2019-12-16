@@ -22,4 +22,8 @@ spec:
       - path: /owncloud
         backend:
           serviceName: owncloud
-          servicePort: 9000
+          servicePort: 8080
+
+      - backend:
+          serviceName: owncloud
+          servicePort: 8080
