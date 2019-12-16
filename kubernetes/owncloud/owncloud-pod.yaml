@@ -7,50 +7,33 @@ metadata:
 spec:
   containers:
     - name: owncloud
-      image: sameersbn/owncloud:10.0.10-0
-      args: ["app:owncloud"]
+      image: owncloud/server:10.3
       env:
-        - name: TZ
-          value: Asia/Kolkata
-        - name: DEBUG
-          value: "false"
-
-        - name: OWNCLOUD_URL
-          value: http://cloud.example.com
-
-        - name: OWNCLOUD_ADMIN_USER
-          value: admin
         - name: OWNCLOUD_ADMIN_PASSWORD
-          value: password
-
-        - name: OWNCLOUD_UPLOAD_MAX_FILESIZE
-          value: 4G
-        - name: OWNCLOUD_MAX_FILE_UPLOADS
-          value: "20"
-
-        - name: DB_TYPE
+          value: admin
+        - name: OWNCLOUD_ADMIN_USERNAME
+          value: admin
+        - name: OWNCLOUD_DB_HOST
+          value: postgis
+        - name: OWNCLOUD_DB_NAME
+          value: owncloud # change to owncloud database
+        - name: OWNCLOUD_DB_USERNAME
+          value: geonetwork
+        - name: OWNCLOUD_DB_PASSWORD
+          value: geonetwork
+        - name: OWNCLOUD_DB_TYPE
           value: pgsql
-        - name: DB_HOST
-          value: postgresql
-        - name: DB_PORT
-          value: "5432"
-        - name: DB_USER
-          value: owncloud
-        - name: DB_PASS
-          value: password
-        - name: DB_NAME
-          value: owncloud_db
-
-      ports:
-        - name: php-fpm
-          containerPort: 9000
-          protocol: TCP
+        - name: OWNCLOUD_DOMAIN
+          value: localhost
+        - name: OWNCLOUD_MYSQL_UTF8MB4
+          value: "false"
+        - name: "OWNCLOUD_REDIS_ENABLED"
+          value: "false"
       volumeMounts:
-        - mountPath: /var/lib/owncloud
+        - mountPath: /mnt/data
           name: repositorie-data
   volumes:
     - name: repositorie-data
       persistentVolumeClaim:
         claimName: repositorie-data-claim
 status: {}
-
