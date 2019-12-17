@@ -39,7 +39,7 @@ kubectl apply -f kubernetes/geonetwork/geonetwork-pod.yaml
 kubectl apply -f kubernetes/geonetwork/geonetwork-service.yaml
 
 # terrama2
-kubernetes/terrama2/setup.sh
+kubernetes/terrama2/setup_configmap.sh
 
 sleep 3
 kubectl apply -f kubernetes/terrama2/alert-pod.yaml
