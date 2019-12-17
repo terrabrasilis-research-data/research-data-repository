@@ -6,9 +6,7 @@ metadata:
     name: webapp
 spec:
   ports:
-  - nodePort: 30050
-    port: 36000
-    targetPort: 36000
+    - port: 36000
+      targetPort: 36000
   selector:
     name: webapp
-  type: NodePort

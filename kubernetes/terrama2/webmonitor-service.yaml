@@ -6,9 +6,7 @@ metadata:
     name: webmonitor
 spec:
   ports:
-  - nodePort: 30060
-    port: 36001
-    targetPort: 36001
+    - port: 36001
+      targetPort: 36001
   selector:
     name: webmonitor
-  type: NodePort

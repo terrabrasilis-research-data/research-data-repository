@@ -9,6 +9,21 @@ spec:
   # - host: terrabrasilisresearchdata.dpi.inpe.br
   - http:
       paths:
+      - path: /terrama2
+        backend:
+          serviceName: webapp
+          servicePort: 36000
+      
+      - path: /terrama2/monitor/
+        backend:
+          serviceName: webmonitor
+          servicePort: 36001
+      
+      - path: /terrama2/admin/
+        backend:
+          serviceName: webmonitor
+          servicePort: 36000
+
       - path: /geoserver
         backend:
           serviceName: geoserver

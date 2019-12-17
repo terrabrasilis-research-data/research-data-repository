@@ -39,13 +39,15 @@ kubectl apply -f kubernetes/geonetwork/geonetwork-pod.yaml
 kubectl apply -f kubernetes/geonetwork/geonetwork-service.yaml
 
 # terrama2
-# ToDo: Configure this service in cluster
-# kubectl apply -f kubernetes/terrama2/alert-pod.yaml
-# kubectl apply -f kubernetes/terrama2/analysis-pod.yaml
-# kubectl apply -f kubernetes/terrama2/collector-pod.yaml
-# kubectl apply -f kubernetes/terrama2/interpolator-pod.yaml
-# kubectl apply -f kubernetes/terrama2/view-pod.yaml
-# kubectl apply -f kubernetes/terrama2/webapp-pod.yaml
-# kubectl apply -f kubernetes/terrama2/webmonitor-pod.yaml
-# kubectl apply -f kubernetes/terrama2/webapp-service.yaml
-# kubectl apply -f kubernetes/terrama2/webmonitor-service.yaml
+kubernetes/terrama2/setup_configmap.sh
+
+sleep 3
+kubectl apply -f kubernetes/terrama2/alert-pod.yaml
+kubectl apply -f kubernetes/terrama2/analysis-pod.yaml
+kubectl apply -f kubernetes/terrama2/collector-pod.yaml
+kubectl apply -f kubernetes/terrama2/interpolator-pod.yaml
+kubectl apply -f kubernetes/terrama2/view-pod.yaml
+kubectl apply -f kubernetes/terrama2/webapp-pod.yaml
+kubectl apply -f kubernetes/terrama2/webmonitor-pod.yaml
+kubectl apply -f kubernetes/terrama2/webapp-service.yaml
+kubectl apply -f kubernetes/terrama2/webmonitor-service.yaml

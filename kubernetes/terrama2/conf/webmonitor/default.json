@@ -1,11 +1,11 @@
 {
   "webmonitor": {
-    "basePath": "/",
+    "basePath": "/terrama2/monitor/",
     "port": 36001
   },
   "webadmin": {
     "protocol": "http://",
-    "basePath": "/",
+    "basePath": "/terrama2/",
     "port": 36000,
     "host": "localhost"
   }
