@@ -1,5 +1,5 @@
 {
-  "basePath": "/",
+  "basePath": "/terrama2/",
   "port": 36000,
   "defaultFilePathList": [
     "/data",
@@ -15,7 +15,7 @@
     "username": "geonetwork",
     "password": "geonetwork",
     "database": "terrama2",
-    "host": "db4geonetwork",
+    "host": "postgis",
     "port": 5432,
     "dialect": "postgres",
     "define": {
