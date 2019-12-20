@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: owncloud
+  name: owncloud
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      name: owncloud    
+  template:
+    metadata:  
+      labels:
+        name: owncloud
+    spec:
+      containers:
+        - name: owncloud
+          image: owncloud/server:10.3
+          env:
+            - name: OWNCLOUD_ADMIN_PASSWORD
+              value: admin
+            - name: OWNCLOUD_ADMIN_USERNAME
+              value: admin
+            - name: OWNCLOUD_DB_HOST
+              value: postgis
+            - name: OWNCLOUD_DB_NAME
+              value: owncloud # change to owncloud database
+            - name: OWNCLOUD_DB_USERNAME
+              value: geonetwork
+            - name: OWNCLOUD_DB_PASSWORD
+              value: geonetwork
+            - name: OWNCLOUD_DB_TYPE
+              value: pgsql
+            - name: OWNCLOUD_DOMAIN
+              value: localhost
+            - name: OWNCLOUD_MYSQL_UTF8MB4
+              value: "false"
+            - name: "OWNCLOUD_REDIS_ENABLED"
+              value: "false"
+          volumeMounts:
+            - mountPath: /mnt/data
+              name: repositorie-data
+      volumes:
+        - name: repositorie-data
+          persistentVolumeClaim:
+            claimName: repositorie-data-claim
+status: {}

@@ -22,32 +22,32 @@ kubectl apply -f kubernetes/volume/pv-claim.yaml
 
 # postgis
 sleep 3 # fix looking up service account error
-kubectl apply -f kubernetes/postgis/postgis-pod.yaml
+kubectl apply -f kubernetes/postgis/postgis-deployment.yaml
 kubectl apply -f kubernetes/postgis/postgis-service.yaml
 
 # geoserver
 sleep 3 # fix looking up service account error
-kubectl apply -f kubernetes/geoserver/geoserver-pod.yaml
+kubectl apply -f kubernetes/geoserver/geoserver-deployment.yaml
 kubectl apply -f kubernetes/geoserver/geoserver-service.yaml
 
 # owncloud
-kubectl apply -f kubernetes/owncloud/owncloud-pod.yaml
+kubectl apply -f kubernetes/owncloud/owncloud-deployment.yaml
 kubectl apply -f kubernetes/owncloud/owncloud-service.yaml
 
 # geonetwork
-kubectl apply -f kubernetes/geonetwork/geonetwork-pod.yaml
+kubectl apply -f kubernetes/geonetwork/geonetwork-deployment.yaml
 kubectl apply -f kubernetes/geonetwork/geonetwork-service.yaml
 
 # terrama2
 kubernetes/terrama2/setup_configmap.sh
 
 sleep 3
-kubectl apply -f kubernetes/terrama2/alert-pod.yaml
-kubectl apply -f kubernetes/terrama2/analysis-pod.yaml
-kubectl apply -f kubernetes/terrama2/collector-pod.yaml
-kubectl apply -f kubernetes/terrama2/interpolator-pod.yaml
-kubectl apply -f kubernetes/terrama2/view-pod.yaml
-kubectl apply -f kubernetes/terrama2/webapp-pod.yaml
-kubectl apply -f kubernetes/terrama2/webmonitor-pod.yaml
+kubectl apply -f kubernetes/terrama2/alert-deployment.yaml
+kubectl apply -f kubernetes/terrama2/analysis-deployment.yaml
+kubectl apply -f kubernetes/terrama2/collector-deployment.yaml
+kubectl apply -f kubernetes/terrama2/interpolator-deployment.yaml
+kubectl apply -f kubernetes/terrama2/view-deployment.yaml
+kubectl apply -f kubernetes/terrama2/webapp-deployment.yaml
+kubectl apply -f kubernetes/terrama2/webmonitor-deployment.yaml
 kubectl apply -f kubernetes/terrama2/webapp-service.yaml
 kubectl apply -f kubernetes/terrama2/webmonitor-service.yaml

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: geoserver
+  name: geoserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: geoserver
+  strategy:
+    type: Recreate
+  template:
+    metadata:  
+      labels:
+        name: geoserver
+    spec:
+      containers:
+        - name: geoserver4geonetwork
+          image: kartoza/geoserver:2.13.0
+          env:
+            - name: GEOSERVER_DATA_DIR
+              value: geonetwork
+            - name: GEOWEBCACHE_CACHE_DIR
+              value: geonetwork
+          volumeMounts:
+            - mountPath: /opt/geoserver/data_dir
+              name: repositorie-data
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+      volumes:
+        - name: repositorie-data
+          persistentVolumeClaim:
+            claimName: repositorie-data-claim
+status: {}

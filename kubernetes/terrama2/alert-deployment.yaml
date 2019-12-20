@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: alert
+  name: alert
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: alert    
+  strategy:
+    type: Recreate
+  template:
+    metadata:  
+      labels:
+        name: alert
+    spec:
+      containers:
+      - command:
+        - /usr/local/bin/start_terrama2_service.sh
+        - ALERT
+        - "6546"
+        image: terrama2/terrama2:4.0.11
+        name: alert
+        resources: {}
+        tty: true
+        volumeMounts:
+        - mountPath: /data
+          name: repositorie-data
+        - mountPath: /shared-data
+          name: repositorie-data
+      restartPolicy: Always
+      volumes:
+        - name: repositorie-data
+          persistentVolumeClaim:
+            claimName: repositorie-data-claim
+status: {}

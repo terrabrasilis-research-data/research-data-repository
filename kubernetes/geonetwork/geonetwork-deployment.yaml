@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: geonetwork
+  name: geonetwork
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: geonetwork
+  strategy:
+    type: Recreate
+  template:
+    metadata:  
+      labels:
+        name: geonetwork
+    spec:
+      containers:
+        - name: core4geonetwork
+          image: geonetwork:postgres
+          env:
+            - name: DATA_DIR
+              value: /var/lib/geonetwork_data
+            - name: POSTGRES_DB_HOST
+              value: postgis
+            - name: POSTGRES_DB_PASSWORD
+              value: geonetwork
+            - name: POSTGRES_DB_USERNAME
+              value: geonetwork
+          volumeMounts:
+            - mountPath: /var/lib/geonetwork_data
+              name: repositorie-data
+      volumes:
+        - name: repositorie-data
+          persistentVolumeClaim:
+            claimName: repositorie-data-claim
+status: {}
