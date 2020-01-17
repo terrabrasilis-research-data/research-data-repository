@@ -4,19 +4,10 @@ This page presents an environment configuration approach that can be used to use
 
 ## Create Kubernetes cluster
 
-For the creation of cluster `kind` or `dind` can be used
+For the creation of cluster `kind` can be used
 
-### dind configuration
 
-run the script `cluster/dind-cluster/dind-cluster-v1.13.sh`
-
-```shell
-chmod +x environment/dind-cluster/dind-cluster-v1.13.sh
-
-environment/dind-cluster/dind-cluster-v1.13.sh
-```
-
-### kind configuration (recommended)
+### kind configuration
 
 To use kind run `setup.sh` script.
 
@@ -25,8 +16,6 @@ To use kind run `setup.sh` script.
 chmod + environment/setup.sh
 environment/setup.sh
 ```
-
-> Note that all environment testing has been done on `kind`, so this is the recommended testing environment.
 
 ### About
 
