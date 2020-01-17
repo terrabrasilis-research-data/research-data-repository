@@ -1,5 +1,5 @@
 # TerraBrasilis Research Data - Research Data Repository
-A Research Data Repository provides researchers with the tools they need to store and disseminate their research data. This is done through two different forms of storage and for the dissemination an Research Data Repository counts with several services of access, catalog and processing. 
+A Research Data Repository provides the underlying computational infrastructure for storing, managing, cataloging, sharing and viewing scientific data. This component adopts protocols and interfaces based on open standards, especially those of the OGC consortium.
 
 ## Included components
 
