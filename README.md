@@ -1,7 +1,7 @@
 # TerraBrasilis Research Data - Research Data Repository
 A Research Data Repository provides the underlying computational infrastructure for storing, managing, cataloging, sharing and viewing scientific data. This component adopts protocols and interfaces based on open standards, especially those of the OGC consortium.
 
-## Included components
+### Components
 
 * [Kubernetes Cluster](): Create and manage your own cloud infrastructure and use Kubernetes as your container orchestration engine.
 * [PostgreSQL](): Sophisticated open-source Object-Relational DBMS supporting almost all SQL constructs.
