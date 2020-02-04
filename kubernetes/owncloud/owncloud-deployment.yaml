@@ -40,6 +40,8 @@ spec:
               value: "false"
             - name: "OWNCLOUD_REDIS_ENABLED"
               value: "false"
+            - name: OWNCLOUD_SUB_URL
+              value: /owncloud
           volumeMounts:
             - mountPath: /mnt/data
               name: repositorie-data
