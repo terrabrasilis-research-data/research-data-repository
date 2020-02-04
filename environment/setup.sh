@@ -6,20 +6,19 @@ command -v kind >/dev/null 2>&1 || {
 }
 
 echo "Configure kind cluster"
-
 # create kind cluster
 kind create cluster --config environment/cluster-config.yaml --name TBRD
 
-echo "Configure ingress services"
-kubectl apply -f environment/mandatory.yaml
-kubectl patch deployments -n ingress-nginx nginx-ingress-controller -p "$(cat environment/kind/nginx-kind-paths.json)"
-kubectl apply -f kubernetes/nginx/nginx-ingress.yaml
+echo "Configure nginx services"
+environment/setup_configmap.sh
+kubectl apply -f kubernetes/nginx/nginx.config.yaml
 
 # configure environment
 # PersistentVolume
 kubectl apply -f kubernetes/volume/pv.yaml
 kubectl apply -f kubernetes/volume/pv-claim.yaml
 
+echo "Configure research-data services"
 # postgis
 sleep 3 # fix looking up service account error
 kubectl apply -f kubernetes/postgis/postgis-deployment.yaml
@@ -39,8 +38,6 @@ kubectl apply -f kubernetes/geonetwork/geonetwork-deployment.yaml
 kubectl apply -f kubernetes/geonetwork/geonetwork-service.yaml
 
 # terrama2
-kubernetes/terrama2/setup_configmap.sh
-
 sleep 3
 kubectl apply -f kubernetes/terrama2/alert-deployment.yaml
 kubectl apply -f kubernetes/terrama2/analysis-deployment.yaml

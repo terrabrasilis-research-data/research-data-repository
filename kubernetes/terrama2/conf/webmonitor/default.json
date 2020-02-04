@@ -5,8 +5,8 @@
   },
   "webadmin": {
     "protocol": "http://",
-    "basePath": "/terrama2/",
-    "port": 36000,
+    "basePath": "/terrama2/adm/",
+    "port": 30045,
     "host": "localhost"
   }
 }
