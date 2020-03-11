@@ -10,6 +10,7 @@ nodes:
       kubeletExtraArgs:
         node-labels: "ingress-ready=true"
         authorization-mode: "AlwaysAllow"
+  image: kindest/node:v1.14.3
   extraPortMappings:
   - containerPort: 30040 # postgres
     hostPort: 30040
