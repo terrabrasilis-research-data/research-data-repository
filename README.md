@@ -9,6 +9,10 @@ A Research Data Repository provides the underlying computational infrastructure 
 * [GeoNetwork](https://geonetwork-opensource.org/): GeoNetwork provides an easy to use web interface to search geospatial data across multiple catalogs
 * [TerraMA2](http://www.terrama2.dpi.inpe.br/): TerraMA2 is a computational platform for monitoring, analyzing, and alerting environmental phenomena.
 
-### Configure environment
+### Environment
 
 To configure the environment and test the services, go to the [environment](environment) directory.
+
+The settings of this repository generate a structure similar to the one below.
+
+![](environment/imgs/arch.png)
